@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lowest-common-ancestor-of-a-binary-search-tree\lowest-common-ancestor-of-a-binary-search-tree.cpp">
+    <ClCompile Include="happy-number\happy-number.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

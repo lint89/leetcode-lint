@@ -20,7 +20,7 @@
 // ****************************************************************
 
 #include <iostream>
-#include <cstdint>
+#include <vector>
 
 
 using namespace std;
@@ -37,14 +37,47 @@ struct TreeNode {
 class Solution {
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-        
+		vector<TreeNode*>  pathP, pathQ;
+		if (!searchPath(root, p, pathP)) return NULL;
+		if (!searchPath(root, q, pathQ)) return NULL;
+
+		TreeNode *result = root;
+		int len = min(pathP.size(), pathQ.size());
+		for (int i = 0; i < len; ++i) {
+			if (pathP[i] != pathQ[i])
+				break;
+			result = pathP[i];
+		}
+		return result;
     }
+
+	bool searchPath(TreeNode *root, TreeNode *node, vector<TreeNode*> &path) {
+		if (root == NULL)
+			return false;
+		if (root == node) {
+			path.push_back(node);
+			return true;
+		}
+
+		path.push_back(root);
+		if (searchPath((root->left), node, path)) return true;
+		if (searchPath((root->right), node, path)) return true;
+		path.pop_back();
+
+		return false;
+	}
 };
 
 
 int main()
 {
+	TreeNode *root = new TreeNode(1);
+	TreeNode *left = new TreeNode(2);
+	root->left = left;
+
 	Solution s;
+	TreeNode *result = s.lowestCommonAncestor(root, root, left);
+	cout << result->val << endl;
 
 	system("pause");
 	return 0;

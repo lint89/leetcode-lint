@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lowest-common-ancestor-of-a-binary-search-tree\lowest-common-ancestor-of-a-binary-search-tree.cpp" />
+    <ClCompile Include="happy-number\happy-number.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{B106E820-0A86-47F2-B426-8CB8776179D5}</ProjectGuid>
