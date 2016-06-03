@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="happy-number\happy-number.cpp">
+    <ClCompile Include="plus-one\plus-one.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

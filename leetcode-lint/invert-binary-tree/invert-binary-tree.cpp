@@ -1,6 +1,6 @@
 // Source : https://leetcode.com/problems/invert-binary-tree/
 // Author : LinTao
-// Date   : 2016-5-30
+// Date   : 2016-5-30, AC : 2016-06-03
 
 // ****************************************************************
 // 
@@ -36,7 +36,20 @@ struct TreeNode {
 class Solution {
 public:
     TreeNode* invertTree(TreeNode* root) {
-        
+        if (root == NULL) return root;
+
+        // ½»»»×óÓÒ×ÓÊ÷
+        //TreeNode *tmp = invertTree(root->left);
+        //root->left = invertTree(root->right);
+        //root->right = tmp;
+
+        TreeNode *tmp = root->left;
+        root->left = root->right;
+        root->right = tmp;
+        if (root->left) invertTree(root->left);
+        if (root->right) invertTree(root->right);
+
+        return root;
     }
 };
 
@@ -53,12 +66,13 @@ int main()
 	TreeNode *current = root;
 	current->left = new TreeNode(2);
 	current->right = new TreeNode(7);
-	left->left = new TreeNode(1);
-
-
+    current->left->left = new TreeNode(1);
+    current->left->right = new TreeNode(3);
+    current->right->left = new TreeNode(6);
+    current->right->right = new TreeNode(9);
 
 	Solution s;
-	cout << s.invertTree(root) << endl;
+    s.invertTree(root);
 
 	system("pause");
 	return 0;
