@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="plus-one\plus-one.cpp">
+    <ClCompile Include="merge-sorted-array\merge-sorted-array.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

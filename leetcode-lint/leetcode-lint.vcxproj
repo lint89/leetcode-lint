@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="plus-one\plus-one.cpp" />
+    <ClCompile Include="merge-sorted-array\merge-sorted-array.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{B106E820-0A86-47F2-B426-8CB8776179D5}</ProjectGuid>
