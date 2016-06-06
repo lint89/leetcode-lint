@@ -1,0 +1,52 @@
+﻿// Source : https://leetcode.com/problems/count-and-say/
+// Author : LinTao
+// Date   : 2016-06-06
+
+// ****************************************************************
+// 
+// The count-and-say sequence is the sequence of integers beginning as follows:
+// 1, 11, 21, 1211, 111221, ...
+
+// 1 is read off as "one 1" or 11.
+// 11 is read off as "two 1s" or 21.
+// 21 is read off as "one 2, then one 1" or 1211.
+// Given an integer n, generate the nth sequence.
+
+// Note: The sequence of integers will be represented as a string.
+//
+// ****************************************************************
+
+#include <iostream>
+#include <string>
+
+
+using namespace std;
+
+
+class Solution {
+public:
+    string countAndSay(int n) {
+        string str = "1";
+
+        while (--n) {
+            str = nextCountAndSay(str);
+        }
+
+        return str;
+    }
+    
+    string nextCountAndSay(string str) {
+
+    }
+};
+
+
+int main()
+{
+    int n = 1;
+    
+    Solution s;
+    cout << s.countAndSay(n) << endl;
+	system("pause");
+	return 0;
+}
