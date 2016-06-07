@@ -1,6 +1,6 @@
 ﻿// Source : https://leetcode.com/problems/count-and-say/
 // Author : LinTao
-// Date   : 2016-06-06
+// Date   : 2016-06-07
 
 // ****************************************************************
 // 
@@ -18,6 +18,7 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
 
 
 using namespace std;
@@ -36,14 +37,33 @@ public:
     }
     
     string nextCountAndSay(string str) {
+        string out;
+        for (int i = 0; i < str.size(); ++i) {
+            int len = 1;
+            if (i != str.size() - 1) {
+                while (str[i] == str[i + 1]) {
+                    ++len;
+                    ++i;
+                }
+            }
+            out.append(Int2String(len));
+            out.push_back(str[i]);
+            len = 1;
+        }
+        return out;
+    }
 
+    string Int2String(int i) {
+        stringstream ss;
+        ss << i;
+        return ss.str();
     }
 };
 
 
 int main()
 {
-    int n = 1;
+    int n = 5;
     
     Solution s;
     cout << s.countAndSay(n) << endl;
