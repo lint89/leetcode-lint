@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="reverse-bits\reverse-bits.cpp">
+    <ClCompile Include="two-sum\two-sum.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
